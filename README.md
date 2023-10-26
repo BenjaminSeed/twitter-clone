@@ -1,21 +1,42 @@
-# coc524a08b125eb6e254997fb
+# Twimber App
 
-Quick start:
+The Twimber App is a simple web application that allows users to create, view, and interact with tweet-like posts. It's built using HTML, CSS, and JavaScript, and it includes features such as posting new tweets, liking tweets, retweeting, replying to tweets, and deleting tweets.
 
-```
-$ npm install
-$ npm start
-````
+## Features
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
+- **Posting Tweets:** Users can enter text in the input field and click the "Tweet" button to create a new tweet.
 
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
+- **Liking Tweets:** Each tweet can be liked by clicking the heart icon. Clicking it again unlikes the tweet.
 
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
+- **Retweeting:** Users can retweet tweets, and the retweet count is displayed on each tweet.
 
-Happy Coding!
+- **Replying to Tweets:** Replies can be viewed by clicking the comment icon on a tweet, revealing a list of replies.
+
+- **Deleting Tweets:** Users can delete their own tweets by clicking the trash can icon.
+
+- **Local Storage:** The app uses local storage to store the tweets' data, allowing the user to refresh the page without losing their data.
+
+## Usage
+
+To use the Tweet Feed App, follow these steps:
+
+1. Clone or download the project to your local machine.
+
+2. Open the `index.html` file in a web browser to run the application.
+
+3. You can interact with the app by posting tweets, liking tweets, retweeting, replying to tweets, and deleting tweets.
+
+4. The app will automatically save your data using local storage, so you can return to your tweets even after closing the browser.
+
+## Built With
+
+- HTML, CSS, and JavaScript
+- [UUID](https://github.com/uuidjs/uuid) library for generating unique tweet IDs
+
+## To Do
+
+There are some issues surrounding the delete button, where all tweets can be deleted instead of just the users. I am working on fixing this bug.
+
+## Author
+
+Benjamin Seed
