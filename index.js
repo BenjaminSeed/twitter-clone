@@ -1,5 +1,6 @@
-import { tweetsData } from "./data.js";
 import { v4 as uuidv4 } from "https://jspm.dev/uuid";
+
+let tweetsData = loadTweetsData();
 
 document.addEventListener("click", function (e) {
   if (e.target.dataset.like) {
@@ -15,6 +16,15 @@ document.addEventListener("click", function (e) {
   }
 });
 
+function loadTweetsData() {
+  const storedTweetsData = JSON.parse(localStorage.getItem("tweetsData"));
+  return storedTweetsData || [];
+}
+
+function saveTweetsData() {
+  localStorage.setItem("tweetsData", JSON.stringify(tweetsData));
+}
+
 function handleLikeClick(tweetId) {
   const targetTweetObj = tweetsData.filter(function (tweet) {
     return tweet.uuid === tweetId;
@@ -26,6 +36,7 @@ function handleLikeClick(tweetId) {
     targetTweetObj.likes++;
   }
   targetTweetObj.isLiked = !targetTweetObj.isLiked;
+  saveTweetsData();
   render();
 }
 
@@ -40,6 +51,7 @@ function handleRetweetClick(tweetId) {
     targetTweetObj.retweets++;
   }
   targetTweetObj.isRetweeted = !targetTweetObj.isRetweeted;
+  saveTweetsData();
   render();
 }
 
@@ -48,6 +60,7 @@ function handleDeleteClick(tweetId) {
 
   if (index !== -1) {
     tweetsData.splice(index, 1);
+    saveTweetsData();
     render();
   }
 }
@@ -71,6 +84,7 @@ function handleTweetBtnClick() {
       isRetweeted: false,
       uuid: uuidv4(),
     });
+    saveTweetsData();
     render();
     tweetInput.value = "";
   }
