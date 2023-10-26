@@ -8,7 +8,8 @@ body {
 /* typography and icons */
 
 h1 {
-  color: #0f8cdf;
+  text-shadow: 1px 1px lightgrey;
+  color: #f2d91d;
   margin-bottom: 10px;
   font-size: 20px;
 }
@@ -56,13 +57,14 @@ textarea {
   padding: 10px;
   margin: 0 0 20px 0;
   height: 60px;
-  width: 100%;
+  width: 90%;
   font-size: 20px;
   line-height: 30px;
 }
 
 button {
-  background-color: #1da1f2;
+  text-shadow: 0.4px 0.4px black;
+  background-color: #f2d91d;
   border: none;
   color: white;
   padding: 10px 19px;
@@ -125,7 +127,10 @@ button {
 .profile-pic {
   border: 1px solid lightgray;
   border-radius: 50%;
-  width: 48px;
+  max-width: 50px;
+  max-height: 48px;
+  object-fit: cover;
+  width: 50px;
 }
 
 /* utility */
