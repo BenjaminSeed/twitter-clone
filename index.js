@@ -94,23 +94,11 @@ function getFeedHtml() {
   let feedHtml = ``;
 
   tweetsData.forEach(function (tweet) {
-    let likeIconClass = "";
+    const likeIconClass = tweet.isLiked ? "liked" : "";
 
-    if (tweet.isLiked) {
-      likeIconClass = "liked";
-    }
+    const retweetIconClass = tweet.isRetweeted ? "retweeted" : "";
 
-    let retweetIconClass = "";
-
-    if (tweet.isRetweeted) {
-      retweetIconClass = "retweeted";
-    }
-
-    let deletedIconClass = "";
-
-    if (tweet.isDeleted) {
-      deletedIconClass = "deleted";
-    }
+    const deletedIconClass = tweet.isDeleted ? "deleted" : "";
 
     let repliesHtml = "";
 
